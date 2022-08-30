@@ -7,7 +7,7 @@
     "lint": "eslint",
     "start": "nodemon",
     "test": "mocha",
-    "dev": "npx nodemon httpServer.js"
+    "dev": "npx nodemon restfulExpressServer.js"
   },
   "repository": {
     "type": "git",

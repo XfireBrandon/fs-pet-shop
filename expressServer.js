@@ -47,29 +47,30 @@ app.get('/pets/:id', function(req, res) {
 
 })
 
-// app.post('/pets', function(req, res) {
+app.post('/pets', function(req, res) {
 
-//     fs.readFile('pets.json', 'utf8', function(req, res) {
-//         if(err) {
-//             console.log('error')
-//         }
-//         const parseData = JSON.parse(data)
-//         console.log(parseData)
-//         parseData.push(createCommand)
+    fs.readFile('pets.json', 'utf8', function(req, res) {
+        if(err) {
+            console.log('error')
+        }
+        const parseData = JSON.parse(data)
+        console.log(parseData)
+        parseData.push(createCommand)
 
-//         const JSONcreate = JSON.stringify(parseData)
-//         let age = parseInt(process.argv[3])
-//         let kind = process.argv[4]
-//         let name = process.argv[5]
-//         res.send(age, kind, name)
-//         if(!age || !kind || !name){
-//             console.log("need more info")
-//         } else {
-//             fs.writeFile('pets.json', JSONcreate, function(){
-//                 console.log('error')
-//             })
-//         }
-//     })
+        const JSONcreate = JSON.stringify(parseData)
+        let age = parseInt(process.argv[3])
+        let kind = process.argv[4]
+        let name = process.argv[5]
+        res.send(age, kind, name)
+        if(!age || !kind || !name){
+            console.log("need more info")
+        } else {
+            fs.writeFile('pets.json', JSONcreate, function(){
+                console.log('error')
+            })
+        }
+    })
+})
 
 
 //     // let age = parseInt(process.argv[3])
